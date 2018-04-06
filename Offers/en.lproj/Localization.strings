@@ -1,0 +1,11 @@
+/* 
+  Localization.strings
+  Offers
+
+  Created by Mohanned on 2018-04-06.
+  Copyright © 2018 Mohanned. All rights reserved.
+*/
+"claimed_offers" = "Claimed Offers";
+"share" = "Share";
+"cancel" = "Cancel";
+"number_of_claimed_offers" = "Number of Claimed Offers"
