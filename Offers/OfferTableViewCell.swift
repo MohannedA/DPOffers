@@ -10,12 +10,15 @@ import UIKit
 
 class OfferTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var offerBehaviorLabel: UILabel!
+    //MARK: Properties
     @IBOutlet weak var offerPhoto: UIImageView!
+    @IBOutlet weak var offerBehavior: UILabel!
+    @IBOutlet weak var offerLocationButton_Outlet: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,7 +26,14 @@ class OfferTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
-    @IBAction func offerLocationButton(_ sender: UIButton) {
+    
+    //MARK: Actions
+    @IBAction func offerLocationButton_Action(_ sender: UIButton) {
+        // Set the button (when pressed) to open the location in the default web browser.
+        if let url = URL(string: (sender.title(for: .normal))!) {
+            UIApplication.shared.open(url, options: [:])
+        }
     }
+    
+
 }
