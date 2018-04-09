@@ -178,7 +178,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="nyU-TS-0Fu">
                     <connections>
-                        <segue destination="Opx-PO-Uil" kind="show" identifier="show" id="NUi-UN-q6c"/>
+                        <segue destination="Opx-PO-Uil" kind="show" identifier="shareSegue" id="NUi-UN-q6c"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -224,6 +224,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SV3-Ih-los">
+                                <rect key="frame" x="169" y="533" width="43" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonIsPressed:" destination="Opx-PO-Uil" eventType="touchUpInside" id="3b2-cL-86y"/>
+                                    <segue destination="tzq-3y-jX1" kind="unwind" unwindAction="unwindToOfferListWithSender:" id="i7M-KU-LZh"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3WG-2c-jqa">
                                 <rect key="frame" x="90" y="473" width="61" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -239,10 +248,12 @@
                             <constraint firstItem="f4z-JG-8KO" firstAttribute="top" secondItem="GNc-eH-OR6" secondAttribute="top" constant="56" id="5Hc-KQ-QUI"/>
                             <constraint firstItem="Rvd-Lc-9hD" firstAttribute="top" secondItem="RMc-6r-4LT" secondAttribute="bottom" constant="25" id="9O1-p0-oMJ"/>
                             <constraint firstItem="f4z-JG-8KO" firstAttribute="centerX" secondItem="Ksq-eZ-v4r" secondAttribute="centerX" id="AfU-Ke-dK3"/>
+                            <constraint firstItem="SV3-Ih-los" firstAttribute="leading" secondItem="GNc-eH-OR6" secondAttribute="leading" constant="169" id="Cvp-Fy-yza"/>
                             <constraint firstItem="RMc-6r-4LT" firstAttribute="leading" secondItem="GNc-eH-OR6" secondAttribute="leading" constant="38" id="GCq-wE-XPD"/>
                             <constraint firstItem="GNc-eH-OR6" firstAttribute="trailing" secondItem="RMc-6r-4LT" secondAttribute="trailing" constant="38" id="GFq-6w-Xrm"/>
                             <constraint firstItem="3WG-2c-jqa" firstAttribute="top" secondItem="RMc-6r-4LT" secondAttribute="bottom" constant="25" id="K2r-p3-X62"/>
                             <constraint firstItem="3WG-2c-jqa" firstAttribute="leading" secondItem="GNc-eH-OR6" secondAttribute="leading" constant="90" id="TTU-9w-lEF"/>
+                            <constraint firstItem="SV3-Ih-los" firstAttribute="top" secondItem="RMc-6r-4LT" secondAttribute="bottom" constant="85" id="aHb-rr-W8N"/>
                             <constraint firstItem="WCp-Ru-GlO" firstAttribute="top" secondItem="GNc-eH-OR6" secondAttribute="top" constant="18" id="bRo-Bu-OWq"/>
                             <constraint firstItem="GNc-eH-OR6" firstAttribute="trailing" secondItem="WCp-Ru-GlO" secondAttribute="trailing" constant="38" id="qsT-x1-fRh"/>
                             <constraint firstItem="GNc-eH-OR6" firstAttribute="trailing" secondItem="Rvd-Lc-9hD" secondAttribute="trailing" constant="90" id="tH8-Um-CHg"/>
@@ -253,11 +264,13 @@
                     <connections>
                         <outlet property="behaviorTextField" destination="RMc-6r-4LT" id="zVW-gZ-Xpc"/>
                         <outlet property="offerPhotoImageView" destination="f4z-JG-8KO" id="OlT-cI-nvQ"/>
+                        <outlet property="saveButton" destination="SV3-Ih-los" id="wKE-wb-m1m"/>
                         <outlet property="shareButton" destination="Rvd-Lc-9hD" id="pjx-Xn-SsE"/>
                         <outlet property="shareLabel" destination="WCp-Ru-GlO" id="aSe-6b-300"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2C-ON-wz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tzq-3y-jX1" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="4Dy-fl-fr5">
                     <connections>
                         <action selector="takePhotoIsPressed:" destination="Opx-PO-Uil" id="8ST-dV-zuQ"/>
