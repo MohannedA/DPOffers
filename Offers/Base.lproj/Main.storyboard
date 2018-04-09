@@ -200,12 +200,16 @@
                                     <action selector="shareButtonIsPressed:" destination="Opx-PO-Uil" eventType="touchUpInside" id="2X6-x4-etJ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="f4z-JG-8KO">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="f4z-JG-8KO">
                                 <rect key="frame" x="37" y="76" width="300" height="300"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="Fy7-2h-HcJ"/>
                                     <constraint firstAttribute="width" constant="300" id="OmY-FW-5Cl"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4Dy-fl-fr5" appends="YES" id="W01-Wh-MRr"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share To Claim The Offer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCp-Ru-GlO">
                                 <rect key="frame" x="38" y="38" width="299" height="21"/>
@@ -254,6 +258,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2C-ON-wz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4Dy-fl-fr5">
+                    <connections>
+                        <action selector="takePhotoIsPressed:" destination="Opx-PO-Uil" id="8ST-dV-zuQ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="909.60000000000002" y="33.733133433283363"/>
         </scene>
