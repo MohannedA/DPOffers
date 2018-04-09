@@ -122,7 +122,7 @@
                                     <constraint firstAttribute="height" constant="150" id="EbS-we-AM9"/>
                                 </constraints>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="4Z0-6b-gV4" appends="YES" id="ofs-CS-NbZ"/>
+                                    <outletCollection property="gestureRecognizers" destination="nyU-TS-0Fu" appends="YES" id="ozA-yD-sNm"/>
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Claimed Offers " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJH-Gt-dh1">
@@ -131,7 +131,7 @@
                                     <constraint firstAttribute="height" constant="22" id="wfT-J1-9oy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.28619861759999998" green="0.42316805829999998" blue="0.66703772670000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -176,9 +176,86 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="4Z0-6b-gV4"/>
+                <tapGestureRecognizer id="nyU-TS-0Fu">
+                    <connections>
+                        <segue destination="Opx-PO-Uil" kind="show" identifier="show" id="NUi-UN-q6c"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
+        </scene>
+        <!--Share View Controller-->
+        <scene sceneID="BYb-DO-2PR">
+            <objects>
+                <viewController id="Opx-PO-Uil" customClass="ShareViewController" customModule="Offers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ksq-eZ-v4r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvd-Lc-9hD">
+                                <rect key="frame" x="234" y="473" width="51" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareButtonIsPressed:" destination="Opx-PO-Uil" eventType="touchUpInside" id="2X6-x4-etJ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="f4z-JG-8KO">
+                                <rect key="frame" x="37" y="76" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Fy7-2h-HcJ"/>
+                                    <constraint firstAttribute="width" constant="300" id="OmY-FW-5Cl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share To Claim The Offer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCp-Ru-GlO">
+                                <rect key="frame" x="38" y="38" width="299" height="21"/>
+                                <color key="backgroundColor" red="1" green="0.8298864777959376" blue="0.25478871539820069" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do think?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RMc-6r-4LT">
+                                <rect key="frame" x="38" y="418" width="299" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3WG-2c-jqa">
+                                <rect key="frame" x="90" y="473" width="61" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="2a5-nU-LAz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WCp-Ru-GlO" firstAttribute="leading" secondItem="GNc-eH-OR6" secondAttribute="leading" constant="38" id="0pb-NF-UPj"/>
+                            <constraint firstItem="f4z-JG-8KO" firstAttribute="top" secondItem="GNc-eH-OR6" secondAttribute="top" constant="56" id="5Hc-KQ-QUI"/>
+                            <constraint firstItem="Rvd-Lc-9hD" firstAttribute="top" secondItem="RMc-6r-4LT" secondAttribute="bottom" constant="25" id="9O1-p0-oMJ"/>
+                            <constraint firstItem="f4z-JG-8KO" firstAttribute="centerX" secondItem="Ksq-eZ-v4r" secondAttribute="centerX" id="AfU-Ke-dK3"/>
+                            <constraint firstItem="RMc-6r-4LT" firstAttribute="leading" secondItem="GNc-eH-OR6" secondAttribute="leading" constant="38" id="GCq-wE-XPD"/>
+                            <constraint firstItem="GNc-eH-OR6" firstAttribute="trailing" secondItem="RMc-6r-4LT" secondAttribute="trailing" constant="38" id="GFq-6w-Xrm"/>
+                            <constraint firstItem="3WG-2c-jqa" firstAttribute="top" secondItem="RMc-6r-4LT" secondAttribute="bottom" constant="25" id="K2r-p3-X62"/>
+                            <constraint firstItem="3WG-2c-jqa" firstAttribute="leading" secondItem="GNc-eH-OR6" secondAttribute="leading" constant="90" id="TTU-9w-lEF"/>
+                            <constraint firstItem="WCp-Ru-GlO" firstAttribute="top" secondItem="GNc-eH-OR6" secondAttribute="top" constant="18" id="bRo-Bu-OWq"/>
+                            <constraint firstItem="GNc-eH-OR6" firstAttribute="trailing" secondItem="WCp-Ru-GlO" secondAttribute="trailing" constant="38" id="qsT-x1-fRh"/>
+                            <constraint firstItem="GNc-eH-OR6" firstAttribute="trailing" secondItem="Rvd-Lc-9hD" secondAttribute="trailing" constant="90" id="tH8-Um-CHg"/>
+                            <constraint firstItem="RMc-6r-4LT" firstAttribute="top" secondItem="f4z-JG-8KO" secondAttribute="bottom" constant="42" id="xfC-ui-UQv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GNc-eH-OR6"/>
+                    </view>
+                    <connections>
+                        <outlet property="behaviorTextField" destination="RMc-6r-4LT" id="zVW-gZ-Xpc"/>
+                        <outlet property="offerPhotoImageView" destination="f4z-JG-8KO" id="OlT-cI-nvQ"/>
+                        <outlet property="shareButton" destination="Rvd-Lc-9hD" id="pjx-Xn-SsE"/>
+                        <outlet property="shareLabel" destination="WCp-Ru-GlO" id="aSe-6b-300"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I2C-ON-wz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="909.60000000000002" y="33.733133433283363"/>
         </scene>
     </scenes>
     <resources>
