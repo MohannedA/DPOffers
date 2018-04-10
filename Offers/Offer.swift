@@ -11,7 +11,7 @@ import UIKit
 class Offer {
     var behavior: String
     var photo: UIImage?
-    var location: String // FORMAT: <lat>,<lon>
+    var location: String? // FORMAT: <lat>,<lon>
     
     //MARK: Initialization
     init?(behavior: String, photo: UIImage?, location: String) {
