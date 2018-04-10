@@ -14,11 +14,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK: Variables
     var claimedOffers = [Offer]()
     var obtainedPhoto: UIImage?
+    var claimedOffersCounter = 0
     
     //MARK: Properties
     @IBOutlet weak var claimedOffersTableView: UITableView!
     @IBOutlet weak var numberOfClaimedOffersLabel: UILabel!
     @IBOutlet weak var claimedOffersLabel: UILabel!
+    @IBOutlet weak var counterOfClaimedOffersLabel: UILabel!
     
 
     override func viewDidLoad() {
@@ -39,6 +41,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // Load the sample data.
             loadSampleOffers()
         }
+        
+        // Set up the counter of clamied offers.
+        claimedOffersCounter = claimedOffers.count
+        // Update the counter label.
+        counterOfClaimedOffersLabel.text = "\(claimedOffersCounter)"
         
         // Localize the strings.
         numberOfClaimedOffersLabel.text = NSLocalizedString("number_of_claimed_offers", comment: "Number of Claimed Offers")
@@ -77,6 +84,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         claimedOffers += [offer1, offer2]
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -88,14 +96,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func unwindToOfferList(sender: UIStoryboardSegue) {
         if let shareViewController = sender.source as? ShareViewController, let offer = shareViewController.newOffer {
             
-            // Add a new offer
+            // Add a new offer.
             let newIndexPath = IndexPath(row: claimedOffers.count, section: 0)
-            
             claimedOffers.append(offer)
             claimedOffersTableView.insertRows(at: [newIndexPath], with: .automatic)
             
+            // Set up the counter of clamied offers.
+            claimedOffersCounter = claimedOffers.count
+            // Update the counter label.
+            counterOfClaimedOffersLabel.text = "\(claimedOffersCounter)"
+            
             // Save the offers locally.
             saveOffers()
+
+            
         }
     }
     

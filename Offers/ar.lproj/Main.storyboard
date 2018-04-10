@@ -182,6 +182,7 @@
                     <connections>
                         <outlet property="claimedOffersLabel" destination="Erc-5U-aMN" id="Roc-pH-X87"/>
                         <outlet property="claimedOffersTableView" destination="qeA-Ae-qHC" id="Nph-v6-8oZ"/>
+                        <outlet property="counterOfClaimedOffersLabel" destination="aZr-ah-2lz" id="3xG-UC-Oqp"/>
                         <outlet property="numberOfClaimedOffersLabel" destination="uJH-Gt-dh1" id="5a0-Mo-aZP"/>
                     </connections>
                 </viewController>
@@ -211,7 +212,7 @@
                                 </connections>
                             </button>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="f4z-JG-8KO">
-                                <rect key="frame" x="37" y="76" width="300" height="300"/>
+                                <rect key="frame" x="37.5" y="76" width="300" height="300"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="Fy7-2h-HcJ"/>
