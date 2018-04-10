@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02807AD1207BC487000A250C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02807AD0207BC487000A250C /* ShareViewController.swift */; };
+		02A753A52078F9AE00A1EB7C /* OfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A753A42078F9AE00A1EB7C /* OfferTableViewCell.swift */; };
+		02C6AC1220781A6700FBE4B1 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02C6AC1420781A6700FBE4B1 /* Localization.strings */; };
+		02C6AC1720781F1A00FBE4B1 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6AC1620781F1A00FBE4B1 /* Offer.swift */; };
 		02DCAC7F2077921C00C61D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DCAC7E2077921C00C61D1C /* AppDelegate.swift */; };
 		02DCAC812077921C00C61D1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DCAC802077921C00C61D1C /* ViewController.swift */; };
 		02DCAC842077921C00C61D1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02DCAC822077921C00C61D1C /* Main.storyboard */; };
@@ -26,6 +30,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02807AD0207BC487000A250C /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		02A753A42078F9AE00A1EB7C /* OfferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferTableViewCell.swift; sourceTree = "<group>"; };
+		02C6AC1320781A6700FBE4B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		02C6AC1520781A7F00FBE4B1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localization.strings; sourceTree = "<group>"; };
+		02C6AC1620781F1A00FBE4B1 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		02DCAC7B2077921C00C61D1C /* Offers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Offers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02DCAC7E2077921C00C61D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02DCAC802077921C00C61D1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,10 +88,14 @@
 			children = (
 				02DCAC7E2077921C00C61D1C /* AppDelegate.swift */,
 				02DCAC802077921C00C61D1C /* ViewController.swift */,
+				02C6AC1620781F1A00FBE4B1 /* Offer.swift */,
+				02A753A42078F9AE00A1EB7C /* OfferTableViewCell.swift */,
+				02807AD0207BC487000A250C /* ShareViewController.swift */,
 				02DCAC822077921C00C61D1C /* Main.storyboard */,
 				02DCAC852077921E00C61D1C /* Assets.xcassets */,
 				02DCAC872077921E00C61D1C /* LaunchScreen.storyboard */,
 				02DCAC8A2077921E00C61D1C /* Info.plist */,
+				02C6AC1420781A6700FBE4B1 /* Localization.strings */,
 			);
 			path = Offers;
 			sourceTree = "<group>";
@@ -160,6 +173,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 02DCAC722077921C00C61D1C;
 			productRefGroup = 02DCAC7C2077921C00C61D1C /* Products */;
@@ -178,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02DCAC892077921E00C61D1C /* LaunchScreen.storyboard in Resources */,
+				02C6AC1220781A6700FBE4B1 /* Localization.strings in Resources */,
 				02DCAC862077921E00C61D1C /* Assets.xcassets in Resources */,
 				02DCAC842077921C00C61D1C /* Main.storyboard in Resources */,
 			);
@@ -197,6 +212,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02807AD1207BC487000A250C /* ShareViewController.swift in Sources */,
+				02A753A52078F9AE00A1EB7C /* OfferTableViewCell.swift in Sources */,
+				02C6AC1720781F1A00FBE4B1 /* Offer.swift in Sources */,
 				02DCAC812077921C00C61D1C /* ViewController.swift in Sources */,
 				02DCAC7F2077921C00C61D1C /* AppDelegate.swift in Sources */,
 			);
@@ -221,6 +239,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		02C6AC1420781A6700FBE4B1 /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02C6AC1320781A6700FBE4B1 /* en */,
+				02C6AC1520781A7F00FBE4B1 /* ar */,
+			);
+			name = Localization.strings;
+			sourceTree = "<group>";
+		};
 		02DCAC822077921C00C61D1C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -244,6 +271,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -304,6 +332,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -358,8 +387,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 86K78YBMR9;
 				INFOPLIST_FILE = Offers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -368,6 +398,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Mohanned.Offers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -377,8 +408,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 86K78YBMR9;
 				INFOPLIST_FILE = Offers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -387,6 +419,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Mohanned.Offers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

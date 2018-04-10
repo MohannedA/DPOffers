@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -27,7 +28,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Set the table view source to the ViewController.
         claimedOffersTableView.dataSource = self
         
-        loadSampleOffers()
+        
+        // Load any saved offers, otherwise load sample data.
+        if let savedOffers = loadOffers() {
+            claimedOffers += savedOffers
+        }
+        else {
+            // Load the sample data.
+            loadSampleOffers()
+        }
         
 
     }
@@ -79,7 +88,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             claimedOffers.append(offer)
             claimedOffersTableView.insertRows(at: [newIndexPath], with: .automatic)
+            
+            // Save the offers locally.
+            saveOffers()
         }
+    }
+    
+    //MARK: Private Methods
+    
+    /*
+     To save offers locally.
+     */
+    private func saveOffers() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(claimedOffers, toFile: Offer.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Offers successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save offers...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    /*
+     To load the saved offers.
+     Return opitional so that it could return nothing (which means nothing is saved).
+     */
+    private func loadOffers() -> [Offer]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Offer.ArchiveURL.path) as? [Offer]
     }
 
 }
