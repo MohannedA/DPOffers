@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		027E7A30207D58F000F6690B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E7A2F207D58F000F6690B /* CoreLocation.framework */; };
 		02807AD1207BC487000A250C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02807AD0207BC487000A250C /* ShareViewController.swift */; };
 		02A753A52078F9AE00A1EB7C /* OfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A753A42078F9AE00A1EB7C /* OfferTableViewCell.swift */; };
 		02C6AC1220781A6700FBE4B1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02C6AC1420781A6700FBE4B1 /* Localizable.strings */; };
@@ -35,6 +36,7 @@
 		027E7A2B207D479B00F6690B /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ar; path = ar.lproj/Main.storyboard; sourceTree = "<group>"; };
 		027E7A2C207D479B00F6690B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		027E7A2D207D47EF00F6690B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		027E7A2F207D58F000F6690B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		02807AD0207BC487000A250C /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		02A753A42078F9AE00A1EB7C /* OfferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferTableViewCell.swift; sourceTree = "<group>"; };
 		02C6AC1320781A6700FBE4B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				027E7A30207D58F000F6690B /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +71,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		027E7A2E207D58F000F6690B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				027E7A2F207D58F000F6690B /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		02DCAC722077921C00C61D1C = {
 			isa = PBXGroup;
 			children = (
 				02DCAC7D2077921C00C61D1C /* Offers */,
 				02DCAC922077921F00C61D1C /* OffersTests */,
 				02DCAC7C2077921C00C61D1C /* Products */,
+				027E7A2E207D58F000F6690B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

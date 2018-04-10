@@ -34,8 +34,6 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        uptateShareLabelState()
-        
         // Set the behaviorTestField managing to the ShareViewController.
         behaviorTextField.delegate = self
         
@@ -63,6 +61,8 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         cancelButton.setTitle(NSLocalizedString("cancel", comment: "Cancel"), for: .normal)
         saveButton.setTitle(NSLocalizedString("save", comment: "Save"), for: .normal)
         behaviorTextField.placeholder = NSLocalizedString("what_on_your_mind", comment: "What on your mind?")
+        
+        uptateShareLabelState()
     }
     
     //MARK: UIImagePickerControllerDelegate
@@ -140,11 +140,12 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         // Present the activity view controller.
         self.present(activityViewController, animated: true, completion: nil)
         
-        activityViewController.completionWithItemsHandler = {(type,completed,items,error) in self.isShared = completed}
+        // To know if the user cancels the activity.
+        activityViewController.completionWithItemsHandler = handleSharingWhenDone//{(type,completed,items,error) in self.isShared = completed}
         
-        if isShared {
+        /*if isShared {
             saveButton.isEnabled = true
-        }
+        }*/
     }
     
     @IBAction func takePhotoIsPressed(_ sender: UITapGestureRecognizer) {
@@ -176,9 +177,6 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
     }
     
 
-    @IBAction func saveButtonIsPressed(_ sender: UIButton) {
-        //performSegue(withIdentifier: "shareSegue", sender: self)
-    }
     
     
     //MARK: Private Methods
@@ -202,5 +200,14 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             // Change the label state
             shareLabel.text = NSLocalizedString("share_to_claim", comment: "Share to claim the offer")
         }
+    }
+    
+    func handleSharingWhenDone(activityType: UIActivityType?, shared: Bool, items: [Any]?, error: Error?) {
+        // Return if cancelled.
+        if (!shared) {
+            return
+        }
+        
+        saveButton.isEnabled = true
     }
 }

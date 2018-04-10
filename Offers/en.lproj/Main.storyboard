@@ -240,7 +240,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="saveButtonIsPressed:" destination="Opx-PO-Uil" eventType="touchUpInside" id="3b2-cL-86y"/>
                                     <segue destination="tzq-3y-jX1" kind="unwind" unwindAction="unwindToOfferListWithSender:" id="i7M-KU-LZh"/>
                                 </connections>
                             </button>

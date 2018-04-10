@@ -45,15 +45,7 @@
 	<string>To capture offers.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>To pick a cptured offer.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string></string>
-	<key>NSLocationUsageDescription</key>
-	<string>To get the offer location.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>To get the offer location.</string>
 </dict>
 </plist>
