@@ -17,20 +17,28 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
     @IBOutlet weak var shareLabel: UILabel!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var behaviorTextField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
     
     //MARK: Variables
     var offerPhoto: UIImage? = UIImage()
-    var isPhotoObtained: Bool = false
     var latitudeAndLongitude: String?
+    var locationLink: String?
+    var newOffer: Offer?
+    // Flags
+    var isPhotoObtained: Bool = false
+    var isCameraAccessible: Bool = false
+    var isLocationAccessible: Bool = false
+    var isShared = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*if !isPhotoObtained {
-            shareLabel.text = "Capture Offer!"
-            shareButton.isEnabled = false
-        }*/
+        
+        uptateShareLabelState()
+        
+        // Set the behaviorTestField managing to the ShareViewController.
         behaviorTextField.delegate = self
         
+        // Set the location manager.
         let locationManager = CLLocationManager()
         
         // Ask for authorisation from the user.
@@ -45,46 +53,22 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        
+        // Set it disabled by default to prevent the user from saving before sharing.
+        saveButton.isEnabled = false
 
-        offerPhoto = offerPhotoImageView.image
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    func showCameraAndPhotoLibrary() {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (alert:UIAlertAction!) -> Void in
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                imagePickerController.sourceType = .camera
-                self.present(imagePickerController, animated: true, completion: nil)
-            } else {
-                print("Camera is not accessible!")
-            }
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (alert:UIAlertAction!) -> Void in
-            imagePickerController.sourceType = .photoLibrary
-            self.present(imagePickerController, animated: true, completion: nil)
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        present(actionSheet, animated: true, completion: nil)
-    }
-    
+    //MARK: UIImagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             offerPhotoImageView.image = image
+            isPhotoObtained = true
+            isCameraAccessible = true
         } else {
-            print("Camera is not accessible!")
+            print("Cannot get a picture!")
         }
+        uptateShareLabelState()
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -92,24 +76,33 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         picker.dismiss(animated: true, completion: nil)
     }
 
-    /*
-    // MARK: - Navigation
+    // MARK: Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // This method lets you configure a view controller before it's presented.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        let behavior = behaviorTextField.text
+        let photo = offerPhotoImageView.image
+        let location = locationLink ?? ""
+        
+        // Set the offer to be passed to ViewController after the unwind segue.
+        newOffer = Offer(behavior: behavior!, photo: photo, location: location)
+        
     }
-    */
     
     //MARK: CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locationValue: CLLocationCoordinate2D = manager.location?.coordinate
-            else {
+        if let locationValue: CLLocationCoordinate2D = manager.location?.coordinate {
+            latitudeAndLongitude = "\(locationValue.latitude),\(locationValue.longitude)"
+            isLocationAccessible = true
+            uptateShareLabelState()
+        } else {
                 print("Cannot get the location!");
+                self.isLocationAccessible = false
+                uptateShareLabelState()
                 return
         }
-        latitudeAndLongitude = "\(locationValue.latitude),\(locationValue.longitude)"
     }
     
     //MARK: UITextFieldDelegate
@@ -119,23 +112,33 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         return true
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        uptateShareLabelState()
+    }
+
+    
     //MARK: Actions
     @IBAction func shareButtonIsPressed(_ sender: UIButton) {
         // Set the share items.
-        let text = behaviorTextField.text
+        let text = "\(behaviorTextField.text ?? "")\n"
         let image = offerPhotoImageView.image
         
         // Location Link Format is: "https://www.google.com/maps/?q= <lat>,<lon"
         let locationLink = "https://www.google.com/maps/?q=\(latitudeAndLongitude ?? "")"
         
         // Set up the activity view controller.
-        let shareItems = [text!, image!, locationLink] as [Any]
+        let shareItems = [text, image!, locationLink] as [Any]
         let activityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
         // Present the activity view controller.
         self.present(activityViewController, animated: true, completion: nil)
         
+        activityViewController.completionWithItemsHandler = {(type,completed,items,error) in self.isShared = completed}
+        
+        if isShared {
+            saveButton.isEnabled = true
+        }
     }
     
     @IBAction func takePhotoIsPressed(_ sender: UITapGestureRecognizer) {
@@ -147,10 +150,13 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (alert:UIAlertAction!) -> Void in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 imagePickerController.sourceType = .camera
+                self.isCameraAccessible = true
                 self.present(imagePickerController, animated: true, completion: nil)
             } else {
+                self.isCameraAccessible = false
                 print("Camera is not accessible!")
             }
+            self.uptateShareLabelState()
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (alert:UIAlertAction!) -> Void in
@@ -164,4 +170,31 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
     }
     
 
+    @IBAction func saveButtonIsPressed(_ sender: UIButton) {
+        //performSegue(withIdentifier: "shareSegue", sender: self)
+    }
+    
+    
+    //MARK: Private Methods
+    private func uptateShareLabelState() {
+        // Check that every item is filled.
+        if !isPhotoObtained {
+            shareLabel.text = "Capture offer!"
+            shareButton.isEnabled = false
+        } else if behaviorTextField.text == "" {
+            shareLabel.text = "Add your comment!"
+            shareButton.isEnabled = false
+        } else if !isCameraAccessible {
+            shareLabel.text = "Allow access to the camera"
+            shareButton.isEnabled = false
+        } else if false {//!isLocationAccessible {
+            shareLabel.text = "Allow access to the location"
+            shareButton.isEnabled = false
+        } else { // Every item is filled.
+            // Enable share button.
+            shareButton.isEnabled = true
+            // Change the label state
+            shareLabel.text = "Share to claim the offer"
+        }
+    }
 }
