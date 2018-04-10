@@ -1,0 +1,20 @@
+/*
+ Localization.strings
+ Offers
+ 
+ Created by Mohanned on 2018-04-06.
+ Copyright © 2018 Mohanned. All rights reserved.
+ */
+"claimed_offers" = "العروض المعتمدة";
+"share" = "شارك";
+"cancel" = "إلغاء";
+"number_of_claimed_offers" = "عدد العروض المعتمدة";
+"save" = "حفظ";
+"what_on_your_mind" = "ما هو رأيك؟";
+"camera" = "كاميرا";
+"gallery" = "ألبوم الصور";
+"capture_offer" = "صور العرض";
+"add_comment" = "أضف رأيك";
+"allow_camera" = "اسمح استخدام الكاميرا من الإعدادات";
+"allow_location" = "اسمح استخدام الموقع من الإعدادات";
+"share_to_claim" = "شارك لكي تعتمد العرض";

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		02807AD1207BC487000A250C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02807AD0207BC487000A250C /* ShareViewController.swift */; };
 		02A753A52078F9AE00A1EB7C /* OfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A753A42078F9AE00A1EB7C /* OfferTableViewCell.swift */; };
-		02C6AC1220781A6700FBE4B1 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02C6AC1420781A6700FBE4B1 /* Localization.strings */; };
+		02C6AC1220781A6700FBE4B1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02C6AC1420781A6700FBE4B1 /* Localizable.strings */; };
 		02C6AC1720781F1A00FBE4B1 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6AC1620781F1A00FBE4B1 /* Offer.swift */; };
 		02DCAC7F2077921C00C61D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DCAC7E2077921C00C61D1C /* AppDelegate.swift */; };
 		02DCAC812077921C00C61D1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DCAC802077921C00C61D1C /* ViewController.swift */; };
@@ -30,15 +30,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		027E7A28207D44AF00F6690B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		027E7A29207D44AF00F6690B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		027E7A2B207D479B00F6690B /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ar; path = ar.lproj/Main.storyboard; sourceTree = "<group>"; };
+		027E7A2C207D479B00F6690B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		027E7A2D207D47EF00F6690B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02807AD0207BC487000A250C /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		02A753A42078F9AE00A1EB7C /* OfferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferTableViewCell.swift; sourceTree = "<group>"; };
-		02C6AC1320781A6700FBE4B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
-		02C6AC1520781A7F00FBE4B1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localization.strings; sourceTree = "<group>"; };
+		02C6AC1320781A6700FBE4B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		02C6AC1620781F1A00FBE4B1 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		02DCAC7B2077921C00C61D1C /* Offers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Offers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02DCAC7E2077921C00C61D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02DCAC802077921C00C61D1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		02DCAC832077921C00C61D1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02DCAC852077921E00C61D1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02DCAC882077921E00C61D1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02DCAC8A2077921E00C61D1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,7 +98,7 @@
 				02DCAC852077921E00C61D1C /* Assets.xcassets */,
 				02DCAC872077921E00C61D1C /* LaunchScreen.storyboard */,
 				02DCAC8A2077921E00C61D1C /* Info.plist */,
-				02C6AC1420781A6700FBE4B1 /* Localization.strings */,
+				02C6AC1420781A6700FBE4B1 /* Localizable.strings */,
 			);
 			path = Offers;
 			sourceTree = "<group>";
@@ -192,7 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02DCAC892077921E00C61D1C /* LaunchScreen.storyboard in Resources */,
-				02C6AC1220781A6700FBE4B1 /* Localization.strings in Resources */,
+				02C6AC1220781A6700FBE4B1 /* Localizable.strings in Resources */,
 				02DCAC862077921E00C61D1C /* Assets.xcassets in Resources */,
 				02DCAC842077921C00C61D1C /* Main.storyboard in Resources */,
 			);
@@ -239,19 +242,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		02C6AC1420781A6700FBE4B1 /* Localization.strings */ = {
+		02C6AC1420781A6700FBE4B1 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				02C6AC1320781A6700FBE4B1 /* en */,
-				02C6AC1520781A7F00FBE4B1 /* ar */,
+				027E7A29207D44AF00F6690B /* ar */,
 			);
-			name = Localization.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		02DCAC822077921C00C61D1C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				02DCAC832077921C00C61D1C /* Base */,
+				027E7A2B207D479B00F6690B /* ar */,
+				027E7A2C207D479B00F6690B /* en */,
+				027E7A2D207D47EF00F6690B /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				02DCAC882077921E00C61D1C /* Base */,
+				027E7A28207D44AF00F6690B /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

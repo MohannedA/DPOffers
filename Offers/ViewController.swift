@@ -17,6 +17,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: Properties
     @IBOutlet weak var claimedOffersTableView: UITableView!
+    @IBOutlet weak var numberOfClaimedOffersLabel: UILabel!
+    @IBOutlet weak var claimedOffersLabel: UILabel!
     
 
     override func viewDidLoad() {
@@ -38,6 +40,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             loadSampleOffers()
         }
         
+        // Localize the strings.
+        numberOfClaimedOffersLabel.text = NSLocalizedString("number_of_claimed_offers", comment: "Number of Claimed Offers")
+        claimedOffersLabel.text = NSLocalizedString("claimed_offers", comment: "Claimed Offers")
 
     }
     

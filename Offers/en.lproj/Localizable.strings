@@ -1,0 +1,20 @@
+/* 
+  Localization.strings
+  Offers
+
+  Created by Mohanned on 2018-04-06.
+  Copyright © 2018 Mohanned. All rights reserved.
+*/
+"claimed_offers" = "Claimed Offers";
+"share" = "Share";
+"cancel" = "Cancel";
+"number_of_claimed_offers" = "Number of Claimed Offers";
+"save" = "Save";
+"what_on_your_mind" = "What is on your mind?";
+"camera" = "Camera";
+"gallery" = "Gallery";
+"capture_offer" = "Capture an offer";
+"add_comment" = "Add your comment";
+"allow_camera" = "Allow access to the camera from settings";
+"allow_location" = "Allow access to the location from settings";
+"share_to_claim" = "Share to claim the offer";

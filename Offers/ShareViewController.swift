@@ -18,6 +18,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var behaviorTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     //MARK: Variables
     var offerPhoto: UIImage? = UIImage()
@@ -28,7 +29,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
     var isPhotoObtained: Bool = false
     var isCameraAccessible: Bool = false
     var isLocationAccessible: Bool = false
-    var isShared = false
+    var isShared: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,12 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         
         // Set it disabled by default to prevent the user from saving before sharing.
         saveButton.isEnabled = false
-
+        
+        // Localize the strings.
+        shareButton.setTitle(NSLocalizedString("share", comment: "Share"), for: .normal)
+        cancelButton.setTitle(NSLocalizedString("cancel", comment: "Cancel"), for: .normal)
+        saveButton.setTitle(NSLocalizedString("save", comment: "Save"), for: .normal)
+        behaviorTextField.placeholder = NSLocalizedString("what_on_your_mind", comment: "What on your mind?")
     }
     
     //MARK: UIImagePickerControllerDelegate
@@ -147,7 +153,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (alert:UIAlertAction!) -> Void in
+        actionSheet.addAction(UIAlertAction(title: NSLocalizedString("camera", comment: "Camera"), style: .default, handler: { (alert:UIAlertAction!) -> Void in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 imagePickerController.sourceType = .camera
                 self.isCameraAccessible = true
@@ -159,12 +165,12 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             self.uptateShareLabelState()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (alert:UIAlertAction!) -> Void in
+        actionSheet.addAction(UIAlertAction(title: NSLocalizedString("gallery", comment: "Gallery"), style: .default, handler: { (alert:UIAlertAction!) -> Void in
             imagePickerController.sourceType = .photoLibrary
             self.present(imagePickerController, animated: true, completion: nil)
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: NSLocalizedString("cancel", comment: "Cancel"), style: .cancel, handler: nil))
         
         present(actionSheet, animated: true, completion: nil)
     }
@@ -179,22 +185,22 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
     private func uptateShareLabelState() {
         // Check that every item is filled.
         if !isPhotoObtained {
-            shareLabel.text = "Capture offer!"
+            shareLabel.text = NSLocalizedString("capture_offer", comment: "Capture an offer")
             shareButton.isEnabled = false
         } else if behaviorTextField.text == "" {
-            shareLabel.text = "Add your comment!"
+            shareLabel.text = NSLocalizedString("add_comment", comment: "Add your comment")
             shareButton.isEnabled = false
         } else if !isCameraAccessible {
-            shareLabel.text = "Allow access to the camera"
+            shareLabel.text = NSLocalizedString("allow_camera", comment: "Allow access to the camera from settings")
             shareButton.isEnabled = false
         } else if false {//!isLocationAccessible {
-            shareLabel.text = "Allow access to the location"
+            shareLabel.text = NSLocalizedString("allow_location", comment: "Allow access to the location from settings")
             shareButton.isEnabled = false
         } else { // Every item is filled.
             // Enable share button.
             shareButton.isEnabled = true
             // Change the label state
-            shareLabel.text = "Share to claim the offer"
+            shareLabel.text = NSLocalizedString("share_to_claim", comment: "Share to claim the offer")
         }
     }
 }
