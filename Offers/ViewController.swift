@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: Variables
     var claimedOffers = [Offer]()
+    var obtainedPhoto: UIImage?
     
     //MARK: Properties
     @IBOutlet weak var claimedOffersTableView: UITableView!
@@ -27,6 +28,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         claimedOffersTableView.dataSource = self
         
         loadSampleOffers()
+        
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,8 +44,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.offerPhoto.image = claimedOffers[indexPath.row].photo
         cell.offerBehavior.text = claimedOffers[indexPath.row].behavior
         
-        // Set the title to be formed as the google map format (https://www.google.com/maps/?q= <lat>,<lon>).
-        cell.offerLocationButton_Outlet.setTitle("https://www.google.com/maps/?q=" + claimedOffers[indexPath.row].location, for: .normal)
+        // Set the title to be formed as the google map quary format (https://www.google.com/maps/?q= <lat>,<lon>).
+        cell.offerLocationButton_Outlet.setTitle("https://www.google.com/maps/?q=" + claimedOffers[indexPath.row].location!, for: .normal)
         
         return cell
     }
@@ -61,7 +64,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         claimedOffers += [offer1, offer2]
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let shareVC = segue.destination as? ShareViewController
+        shareVC?.offerPhoto = obtainedPhoto
+    }
+    
+    //MARK: Actions
+    @IBAction func unwindToOfferList(sender: UIStoryboardSegue) {
+        if let shareViewController = sender.source as? ShareViewController, let offer = shareViewController.newOffer {
+            
+            // Add a new offer
+            let newIndexPath = IndexPath(row: claimedOffers.count, section: 0)
+            
+            claimedOffers.append(offer)
+            claimedOffersTableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
 
 }
 
