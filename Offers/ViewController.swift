@@ -11,6 +11,9 @@ import os.log
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //MARK: Constants
+    private let OFFERS_LIMIT: Int = 5 // The limit is 5 to be easy for teating.
+    
     //MARK: Variables
     var claimedOffers = [Offer]()
     var obtainedPhoto: UIImage?
@@ -89,6 +92,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let shareVC = segue.destination as? ShareViewController
+        // Send the obtained photo to ShareViewController.
         shareVC?.offerPhoto = obtainedPhoto
     }
     
@@ -112,6 +116,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
     }
+    
+    @IBAction func goToShare(_ sender: UITapGestureRecognizer) {
+        // If the limit is not reached.
+        if claimedOffers.count < OFFERS_LIMIT {
+            self.performSegue(withIdentifier: "shareSegue", sender: self)
+        } else { // Show alert that the limit is reached.
+            let limitAlert = UIAlertController(title: NSLocalizedString("reached_limit_title", comment: "Reached The Limit!"), message: NSLocalizedString("reached_limit_message", comment: "You reached the limit of offers...You cannot claim more offers"), preferredStyle: UIAlertControllerStyle.alert)
+            
+            limitAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                print("Ok in box dialog is pressed")
+            }))
+            
+            present(limitAlert, animated: true, completion: nil)
+        }
+    }
+    
     
     //MARK: Private Methods
     

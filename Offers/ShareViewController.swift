@@ -180,6 +180,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
     
     
     //MARK: Private Methods
+    /* To update share label state through the steps of sharing. */
     private func uptateShareLabelState() {
         // Check that every item is filled.
         if !isPhotoObtained {

@@ -93,7 +93,7 @@
                                     <constraint firstAttribute="height" constant="149" id="v4t-Yw-glx"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLT-Za-3vd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLT-Za-3vd">
                                 <rect key="frame" x="195" y="41" width="180" height="52"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="60"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -184,12 +184,13 @@
                         <outlet property="claimedOffersTableView" destination="qeA-Ae-qHC" id="Nph-v6-8oZ"/>
                         <outlet property="counterOfClaimedOffersLabel" destination="aZr-ah-2lz" id="qAk-ME-U9M"/>
                         <outlet property="numberOfClaimedOffersLabel" destination="uJH-Gt-dh1" id="5a0-Mo-aZP"/>
+                        <segue destination="Opx-PO-Uil" kind="show" identifier="shareSegue" id="y3E-gG-jtN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="nyU-TS-0Fu">
                     <connections>
-                        <segue destination="Opx-PO-Uil" kind="show" identifier="shareSegue" id="NUi-UN-q6c"/>
+                        <action selector="goToShare:" destination="BYZ-38-t0r" id="9uq-g5-UKf"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
