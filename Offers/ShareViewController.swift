@@ -137,6 +137,8 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         // Set up the activity view controller.
         let shareItems = [text, image!, locationLink] as [Any]
         let activityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+        // Disable most of the actions (So just sharing via social media is allowed).
+        activityViewController.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList,UIActivityType.copyToPasteboard,UIActivityType.saveToCameraRoll,UIActivityType.print,UIActivityType.assignToContact,UIActivityType.copyToPasteboard]
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
         // Present the activity view controller.

@@ -42,10 +42,10 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSCameraUsageDescription</key>
-	<string>To capture offers.</string>
+	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>To pick a cptured offer.</string>
+	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>To get the offer location.</string>
+	<string></string>
 </dict>
 </plist>
