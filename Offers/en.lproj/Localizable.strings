@@ -19,5 +19,5 @@
 "allow_location" = "Allow access to the location from settings";
 "share_to_claim" = "Share to claim the offer";
 "save_now" = "You have claimed your offer...Save now!";
-"reached_limit_title" = "Reached The Limit!"
+"reached_limit_title" = "Reached The Limit!";
 "reached_limit_message" = "You reached the limit of offers...You cannot claim more offers";

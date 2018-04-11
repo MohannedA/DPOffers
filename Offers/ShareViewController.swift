@@ -25,6 +25,8 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
     var latitudeAndLongitude: String?
     var locationLink: String?
     var newOffer: Offer?
+    // Set the location manager.
+    let locationManager = CLLocationManager()
     // Flags
     var isPhotoObtained: Bool = false
     var isCameraAccessible: Bool = false
@@ -36,9 +38,6 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         
         // Set the behaviorTestField managing to the ShareViewController.
         behaviorTextField.delegate = self
-        
-        // Set the location manager.
-        let locationManager = CLLocationManager()
         
         // Ask for authorisation from the user.
         locationManager.requestAlwaysAuthorization()
@@ -64,6 +63,8 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         
         uptateShareLabelState()
     }
+    
+    
     
     //MARK: UIImagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -131,6 +132,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         
         // Location Link Format is: "https://www.google.com/maps/?q= <lat>,<lon"
         let locationLink = "https://www.google.com/maps/?q=\(latitudeAndLongitude ?? "")"
+        print(locationLink)
         
         // Set up the activity view controller.
         let shareItems = [text, image!, locationLink] as [Any]
@@ -141,11 +143,8 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         self.present(activityViewController, animated: true, completion: nil)
         
         // To know if the user cancels the activity.
-        activityViewController.completionWithItemsHandler = handleSharingWhenDone//{(type,completed,items,error) in self.isShared = completed}
+        activityViewController.completionWithItemsHandler = handleSharingWhenDone
         
-        /*if isShared {
-            saveButton.isEnabled = true
-        }*/
     }
     
     @IBAction func takePhotoIsPressed(_ sender: UITapGestureRecognizer) {
@@ -192,7 +191,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         } else if !isCameraAccessible {
             shareLabel.text = NSLocalizedString("allow_camera", comment: "Allow access to the camera from settings")
             shareButton.isEnabled = false
-        } else if false {//!isLocationAccessible {
+        } else if !isLocationAccessible {
             shareLabel.text = NSLocalizedString("allow_location", comment: "Allow access to the location from settings")
             shareButton.isEnabled = false
         } else { // Every item is filled.
