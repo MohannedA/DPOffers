@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -83,6 +84,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="149" id="KQt-VB-Z2Q"/>
                                     <constraint firstAttribute="width" constant="180" id="VRW-Ry-3oM"/>
+                                    <constraint firstAttribute="width" secondItem="eyF-cl-En6" secondAttribute="height" multiplier="180:149" id="w8Y-qc-YCv"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="QKL-Vq-DKh">
@@ -91,6 +93,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="0xt-w3-MnL"/>
                                     <constraint firstAttribute="height" constant="149" id="v4t-Yw-glx"/>
+                                    <constraint firstAttribute="width" secondItem="QKL-Vq-DKh" secondAttribute="height" multiplier="180:149" id="yQS-pf-3es"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLT-Za-3vd">
@@ -150,6 +153,7 @@
                             <constraint firstItem="dLT-Za-3vd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="B8Z-EQ-v9k"/>
                             <constraint firstItem="PT1-Dv-OSW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="Bg4-X8-qFk"/>
                             <constraint firstItem="dLT-Za-3vd" firstAttribute="leading" secondItem="eyF-cl-En6" secondAttribute="trailing" constant="15" id="JjI-f4-Mgs"/>
+                            <constraint firstItem="QKL-Vq-DKh" firstAttribute="leading" secondItem="eyF-cl-En6" secondAttribute="trailing" constant="15" id="Jmf-I0-nan"/>
                             <constraint firstItem="qeA-Ae-qHC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="LhN-yl-UVo"/>
                             <constraint firstItem="uJH-Gt-dh1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MTF-cZ-mj3"/>
                             <constraint firstItem="dLT-Za-3vd" firstAttribute="trailing" secondItem="qeA-Ae-qHC" secondAttribute="trailing" id="NsQ-rc-Cty"/>
@@ -159,6 +163,7 @@
                             <constraint firstItem="dLT-Za-3vd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="Tx1-LS-hAo"/>
                             <constraint firstItem="aZr-ah-2lz" firstAttribute="leading" secondItem="eyF-cl-En6" secondAttribute="leading" id="Xmc-5E-miz"/>
                             <constraint firstItem="dLT-Za-3vd" firstAttribute="leading" secondItem="QKL-Vq-DKh" secondAttribute="leading" id="Xzd-Yh-myp"/>
+                            <constraint firstItem="QKL-Vq-DKh" firstAttribute="leading" secondItem="eyF-cl-En6" secondAttribute="trailing" constant="15" id="ZfE-vU-56c"/>
                             <constraint firstItem="dLT-Za-3vd" firstAttribute="trailing" secondItem="Erc-5U-aMN" secondAttribute="trailing" id="Zzk-Xx-wRG"/>
                             <constraint firstItem="RiM-ob-Sxq" firstAttribute="trailing" secondItem="Erc-5U-aMN" secondAttribute="trailing" id="azd-Cn-jWK"/>
                             <constraint firstItem="PT1-Dv-OSW" firstAttribute="top" secondItem="dLT-Za-3vd" secondAttribute="bottom" id="bIk-6P-yq4"/>

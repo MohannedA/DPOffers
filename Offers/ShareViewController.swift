@@ -197,7 +197,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         } else { // Every item is filled.
             // Enable share button.
             shareButton.isEnabled = true
-            // Change the label state
+            // Change the label state.
             shareLabel.text = NSLocalizedString("share_to_claim", comment: "Share to claim the offer")
         }
         

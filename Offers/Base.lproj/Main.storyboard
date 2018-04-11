@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -77,19 +78,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="eyF-cl-En6">
+                            <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="eyF-cl-En6">
                                 <rect key="frame" x="0.0" y="42" width="180" height="149"/>
                                 <color key="backgroundColor" red="0.85347885990000005" green="0.95921141389999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="149" id="KQt-VB-Z2Q"/>
                                     <constraint firstAttribute="width" constant="180" id="VRW-Ry-3oM"/>
+                                    <constraint firstAttribute="width" secondItem="eyF-cl-En6" secondAttribute="height" multiplier="180:149" id="gSy-re-HX6"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="QKL-Vq-DKh">
+                            <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="QKL-Vq-DKh">
                                 <rect key="frame" x="195" y="42" width="180" height="149"/>
                                 <color key="backgroundColor" red="0.85347885990000005" green="0.95921141389999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="0xt-w3-MnL"/>
+                                    <constraint firstAttribute="width" secondItem="QKL-Vq-DKh" secondAttribute="height" multiplier="180:149" id="kKm-eV-m9e"/>
                                     <constraint firstAttribute="height" constant="149" id="v4t-Yw-glx"/>
                                 </constraints>
                             </view>
@@ -145,11 +148,13 @@
                             <constraint firstItem="QKL-Vq-DKh" firstAttribute="leading" secondItem="eyF-cl-En6" secondAttribute="trailing" constant="15" id="1Fc-4I-IrM"/>
                             <constraint firstItem="Erc-5U-aMN" firstAttribute="trailing" secondItem="qeA-Ae-qHC" secondAttribute="trailing" id="1nT-C8-BaF"/>
                             <constraint firstItem="eyF-cl-En6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2UY-hb-kBV"/>
+                            <constraint firstItem="QKL-Vq-DKh" firstAttribute="leading" secondItem="eyF-cl-En6" secondAttribute="trailing" constant="15" id="3WQ-As-Nx3"/>
                             <constraint firstItem="PT1-Dv-OSW" firstAttribute="centerX" secondItem="RiM-ob-Sxq" secondAttribute="centerX" id="80j-Xn-d7k"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Erc-5U-aMN" secondAttribute="bottom" constant="395" id="80z-vq-qWZ"/>
                             <constraint firstItem="dLT-Za-3vd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="B8Z-EQ-v9k"/>
                             <constraint firstItem="PT1-Dv-OSW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="Bg4-X8-qFk"/>
                             <constraint firstItem="dLT-Za-3vd" firstAttribute="leading" secondItem="eyF-cl-En6" secondAttribute="trailing" constant="15" id="JjI-f4-Mgs"/>
+                            <constraint firstItem="QKL-Vq-DKh" firstAttribute="leading" secondItem="eyF-cl-En6" secondAttribute="trailing" constant="15" id="LWu-n0-HgQ"/>
                             <constraint firstItem="qeA-Ae-qHC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="LhN-yl-UVo"/>
                             <constraint firstItem="uJH-Gt-dh1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MTF-cZ-mj3"/>
                             <constraint firstItem="dLT-Za-3vd" firstAttribute="trailing" secondItem="qeA-Ae-qHC" secondAttribute="trailing" id="NsQ-rc-Cty"/>

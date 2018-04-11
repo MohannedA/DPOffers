@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -82,6 +83,7 @@
                                 <color key="backgroundColor" red="0.85347885990000005" green="0.95921141389999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="149" id="KQt-VB-Z2Q"/>
+                                    <constraint firstAttribute="width" secondItem="eyF-cl-En6" secondAttribute="height" multiplier="180:149" id="MdE-fe-vu3"/>
                                     <constraint firstAttribute="width" constant="180" id="VRW-Ry-3oM"/>
                                 </constraints>
                             </view>
@@ -90,6 +92,7 @@
                                 <color key="backgroundColor" red="0.85347885990000005" green="0.95921141389999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="0xt-w3-MnL"/>
+                                    <constraint firstAttribute="width" secondItem="QKL-Vq-DKh" secondAttribute="height" multiplier="180:149" id="Kpg-WL-zua"/>
                                     <constraint firstAttribute="height" constant="149" id="v4t-Yw-glx"/>
                                 </constraints>
                             </view>
@@ -165,6 +168,7 @@
                             <constraint firstItem="RiM-ob-Sxq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="199" id="bbs-dC-O1t"/>
                             <constraint firstItem="qeA-Ae-qHC" firstAttribute="top" secondItem="RiM-ob-Sxq" secondAttribute="bottom" constant="21" id="cza-pu-qcV"/>
                             <constraint firstItem="dLT-Za-3vd" firstAttribute="firstBaseline" secondItem="aZr-ah-2lz" secondAttribute="firstBaseline" id="eJI-dD-X4M"/>
+                            <constraint firstItem="QKL-Vq-DKh" firstAttribute="leading" secondItem="eyF-cl-En6" secondAttribute="trailing" constant="15" id="l9p-2j-WLN"/>
                             <constraint firstItem="PT1-Dv-OSW" firstAttribute="centerX" secondItem="uJH-Gt-dh1" secondAttribute="centerX" id="lAN-ky-8eT"/>
                             <constraint firstItem="Erc-5U-aMN" firstAttribute="leading" secondItem="qeA-Ae-qHC" secondAttribute="leading" id="lgG-5I-w57"/>
                             <constraint firstItem="QKL-Vq-DKh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mBM-9Q-LM9"/>
@@ -173,6 +177,7 @@
                             <constraint firstItem="Erc-5U-aMN" firstAttribute="top" secondItem="PT1-Dv-OSW" secondAttribute="bottom" constant="5" id="o1c-2P-wa5"/>
                             <constraint firstItem="aZr-ah-2lz" firstAttribute="leading" secondItem="RiM-ob-Sxq" secondAttribute="leading" id="oDu-Ht-JpH"/>
                             <constraint firstItem="dLT-Za-3vd" firstAttribute="trailing" secondItem="RiM-ob-Sxq" secondAttribute="trailing" id="tvQ-Lc-d5f"/>
+                            <constraint firstItem="QKL-Vq-DKh" firstAttribute="leading" secondItem="eyF-cl-En6" secondAttribute="trailing" constant="15" id="uCI-PQ-uRa"/>
                             <constraint firstItem="dLT-Za-3vd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yC7-Zf-o8c"/>
                             <constraint firstItem="eyF-cl-En6" firstAttribute="top" secondItem="uJH-Gt-dh1" secondAttribute="bottom" id="ynv-oM-6nr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qeA-Ae-qHC" secondAttribute="trailing" id="zen-07-4J6"/>
