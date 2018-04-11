@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "defaultphotoAR_320.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "defaultphoto.png",
+      "filename" : "defaultphotoAR_640.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "defaultphotoAR_960.png",
       "scale" : "3x"
     }
   ],

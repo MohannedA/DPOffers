@@ -33,7 +33,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="offerPhoto" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="ACI-Fq-I0a">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="offerPhoto" image="defaultPhotoEN" translatesAutoresizingMaskIntoConstraints="NO" id="ACI-Fq-I0a">
                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="GGz-6t-peE"/>
@@ -123,7 +123,7 @@
                                 <rect key="frame" x="0.0" y="199" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.49505684826546903" green="0.68300604329008729" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="PT1-Dv-OSW">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capture" translatesAutoresizingMaskIntoConstraints="NO" id="PT1-Dv-OSW">
                                 <rect key="frame" x="112" y="93" width="151" height="150"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -211,7 +211,7 @@
                                     <action selector="shareButtonIsPressed:" destination="Opx-PO-Uil" eventType="touchUpInside" id="2X6-x4-etJ"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="f4z-JG-8KO">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhotoEN" translatesAutoresizingMaskIntoConstraints="NO" id="f4z-JG-8KO">
                                 <rect key="frame" x="37.5" y="76" width="300" height="300"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -294,6 +294,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="defaultPhoto" width="320" height="320"/>
+        <image name="capture" width="320" height="320"/>
+        <image name="defaultPhotoEN" width="320" height="320"/>
     </resources>
 </document>
