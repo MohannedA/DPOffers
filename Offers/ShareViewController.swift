@@ -200,6 +200,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             // Change the label state
             shareLabel.text = NSLocalizedString("share_to_claim", comment: "Share to claim the offer")
         }
+        
     }
     
     func handleSharingWhenDone(activityType: UIActivityType?, shared: Bool, items: [Any]?, error: Error?) {
@@ -207,7 +208,11 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         if (!shared) {
             return
         }
-        
+        // Make the user able to press the save button to return to main.
         saveButton.isEnabled = true
+        // Make the user press the save button only to return to the main.
+        cancelButton.isEnabled = false
+        // Update the share label statues.
+        shareLabel.text = NSLocalizedString("save_now", comment: "You have claimed your offer...Save now!")
     }
 }
